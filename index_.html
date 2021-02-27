@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Babel with Gulp</title>
+
+    <link rel="preload" href="assets/css/style.min.css" as="style">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <h1 data-bsx="key_1 key_5">Hello Babel with Gulp</h1>
+    <p data-bsx="key_1">Please see console log.</p>
+    <p class="foo bar blub bla" data-bsx="key_1">I have css classes.</p>
+    <div data-bsx="key_2">Some div</div>
+    <p data-bsx="key_3 key_5">Another paragraph</p>
+
+    <section>
+      <h2>Test accordion (multipleOpen: false)</h2>
+
+      <ul class="unstyled-list" data-acc data-acc-conf="{ multipleOpen: false, targetOpenedClass: 'show', triggerOpenedClass: 'active' }">
+
+        <!--
+          TODO:
+            - use open and close functions
+            - if closed: open, set aria-expanded, disable (if opened and multipleOpen == false), set aria-disabled
+            - check conf, close opened
+
+            - make opened class configurable?
+        -->
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header active" id="acc-0-0-trig" data-bsx="acc" aria-controls="acc-0-0-cont" aria-expanded="true"><span class="acc-header-text">Lorem</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content show" id="acc-0-0-cont" role="region" aria-labeledby="acc-0-0-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header" id="acc-0-1-trig" data-bsx="acc" aria-controls="acc-0-1-cont" aria-expanded="false"><span class="acc-header-text">Faucibus</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content" id="acc-0-1-cont" role="region" aria-labeledby="acc-0-1-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header" id="acc-0-2-trig" data-bsx="acc" aria-controls="acc-0-2-cont" aria-expanded="false"><span class="acc-header-text">Tincidunt</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content" id="acc-0-2-cont" role="region" aria-labeledby="acc-0-2-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+      </ul>
+
+    </section>
+    <section>
+      <h2>Test accordion (multipleOpen not set, default true)</h2>
+
+      <ul class="unstyled-list" data-acc>
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header open" id="acc-1-0-trig" data-bsx="acc" aria-controls="acc-1-0-cont" aria-expanded="true"><span class="acc-header-text">Lorem</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content open" id="acc-1-0-cont" role="region" aria-labeledby="acc-1-0-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header" id="acc-1-1-trig" data-bsx="acc" aria-controls="acc-1-1-cont" aria-expanded="false"><span class="acc-header-text">Faucibus</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content" id="acc-1-1-cont" role="region" aria-labeledby="acc-1-1-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+        <li data-acc-itm>
+          <section>
+            <h3 class="my-0">
+              <button class="acc-header" id="acc-1-2-trig" data-bsx="acc" aria-controls="acc-1-2-cont" aria-expanded="false"><span class="acc-header-text">Tincidunt</span><span class="acc-header-icon"></span></button>
+            </h3>
+            <div class="bsx-acc-content" id="acc-1-2-cont" role="region" aria-labeledby="acc-1-2-trig">
+              <div acc-cnt-inr>
+                <p>
+                  Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+                </p>
+              </div>
+            </div>
+          </section>
+        </li>
+
+      </ul>
+
+    </section>
+
+    <section>
+      <h2 data-bsx="ape">Appear effects</h2>
+      <p data-bsx="ape">
+        Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+      </p>
+      <p data-bsx="ape" data-ape-conf="{ addClassDelay: 400, appearedClass: 'test-appeared' }">
+        Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+      </p>
+    </section>
+
+
+    <script src="./assets/js/scripts.js"></script>
+  </body>
+</html>
