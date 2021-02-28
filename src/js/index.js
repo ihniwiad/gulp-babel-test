@@ -34,7 +34,8 @@
 
 // files
 
-import './test/index.js';
+// import './test/index.js';
+import './../test/index.js';
 
 // import './utilities/utils.js';
 import './browser-analytics/index.js';

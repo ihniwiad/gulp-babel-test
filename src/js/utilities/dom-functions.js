@@ -77,11 +77,18 @@ const triggerEvent = ( elem, eventName ) => {
 
 // check if innerElem is positiones inside outerElem
 const isPositionedInside = ( outerElem, innerElem ) => {
+
+  console.log( '--' )
+  console.log( 'innerElem.offsetLeft >= outerElem.offsetLeft: ' + ( innerElem.offsetLeft >= outerElem.offsetLeft ? 'true' : 'false' ) )
+  console.log( '( innerElem.offsetLeft + innerElem.offsetWidth ) <= ( /* outerElem.offsetLeft + */ outerElem.offsetWidth ): ' + ( ( innerElem.offsetLeft + innerElem.offsetWidth ) <= ( /* outerElem.offsetLeft + */ outerElem.offsetWidth ) ? 'true' : 'false' ) )
+  console.log( 'innerElem.offsetTop >= outerElem.offsetTop: ' + ( innerElem.offsetTop >= outerElem.offsetTop ? 'true' : 'false' ) )
+  console.log( '( innerElem.offsetTop + innerElem.offsetHeight ) <= ( /* outerElem.offsetTop + */ outerElem.offsetHeight ): ' + ( ( innerElem.offsetTop + innerElem.offsetHeight ) <= ( /* outerElem.offsetTop + */ outerElem.offsetHeight ) ? 'true' : 'false' ) )
+
   return ( 
     innerElem.offsetLeft >= outerElem.offsetLeft
-    && ( innerElem.offsetLeft + innerElem.offsetWidth ) <= ( outerElem.offsetLeft + outerElem.offsetWidth )
+    && ( innerElem.offsetLeft + innerElem.offsetWidth ) <= ( /* outerElem.offsetLeft + */ outerElem.offsetWidth )
     && innerElem.offsetTop >= outerElem.offsetTop
-    && ( innerElem.offsetTop + innerElem.offsetHeight ) <= ( outerElem.offsetTop + outerElem.offsetHeight )
+    && ( innerElem.offsetTop + innerElem.offsetHeight ) <= ( /* outerElem.offsetTop + */ outerElem.offsetHeight )
   )
 }
 

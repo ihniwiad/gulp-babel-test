@@ -15,26 +15,6 @@ require_once( 'src/accordion/class-accordion.php' );
     <link rel="preload" href="assets/css/style.min.css" as="style">
     <link href="assets/css/style.min.css" rel="stylesheet">
 
-    <style>
-/* TEST */
-.outer-elem {
-  position: relative;
-  padding: .5rem;
-  border: 1px solid #ccc;
-}
-.inner-elem {
-  position: relative;
-  display: inline-block;
-  padding: .5rem;
-  border: 1px dashed #fc3;
-  background: rgba(0, 0, 0, .15);
-}
-.inner-elem-1 {
-  bottom: -1rem;
-  right: -1rem;
-}
-    </style>
-
   </head>
   <body>
     <div class="container mb-5">
@@ -46,7 +26,7 @@ require_once( 'src/accordion/class-accordion.php' );
     </div>
 
 
-    <section class="mb-5">
+    <!-- section class="mb-5">
       <div class="container">
         <h2>Element positioned inside</h2>
 
@@ -69,7 +49,11 @@ require_once( 'src/accordion/class-accordion.php' );
           </div>
         </div>
       </div>
-    </section>
+    </section -->
+    <?php
+      // example positioned inside
+      include 'src/test/is-positioned-inside/example.php';
+    ?>
 
 
     <div class="container">
