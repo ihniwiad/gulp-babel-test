@@ -15,9 +15,29 @@ require_once( 'src/accordion/class-accordion.php' );
     <link rel="preload" href="assets/css/style.min.css" as="style">
     <link href="assets/css/style.min.css" rel="stylesheet">
 
+    <style>
+/* TEST */
+.outer-elem {
+  position: relative;
+  padding: .5rem;
+  border: 1px solid #ccc;
+}
+.inner-elem {
+  position: relative;
+  display: inline-block;
+  padding: .5rem;
+  border: 1px dashed #fc3;
+  background: rgba(0, 0, 0, .15);
+}
+.inner-elem-1 {
+  bottom: -1rem;
+  right: -1rem;
+}
+    </style>
+
   </head>
   <body>
-    <div class="container">
+    <div class="container mb-5">
       <h1 data-bsx="key_1 key_5">Hello Babel with Gulp</h1>
       <p data-bsx="key_1">Please see console log.</p>
       <p class="foo bar blub bla" data-bsx="key_1">I have css classes.</p>
@@ -26,13 +46,39 @@ require_once( 'src/accordion/class-accordion.php' );
     </div>
 
 
+    <section class="mb-5">
+      <div class="container">
+        <h2>Element positioned inside</h2>
+
+        <div class="row">
+          <div class="col">
+            <div class="outer-elem" data-bsx="outer">
+              OUTER
+              <div class="inner-elem" data-bsx-tg="inner">
+                INNER
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="outer-elem" data-bsx="outer">
+              OUTER
+              <div class="inner-elem inner-elem-1" data-bsx-tg="inner">
+                INNER
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <div class="container">
       <?php
         // list of example accordions
         include 'src/accordion/example.php';
       ?>
     </div>
-    
+
 
     <section class="of-hidden">
       <div class="container">

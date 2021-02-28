@@ -74,6 +74,17 @@ const triggerEvent = ( elem, eventName ) => {
     elem.dispatchEvent( event )
 }
 
+
+// check if innerElem is positiones inside outerElem
+const isPositionedInside = ( outerElem, innerElem ) => {
+  return ( 
+    innerElem.offsetLeft >= outerElem.offsetLeft
+    && ( innerElem.offsetLeft + innerElem.offsetWidth ) <= ( outerElem.offsetLeft + outerElem.offsetWidth )
+    && innerElem.offsetTop >= outerElem.offsetTop
+    && ( innerElem.offsetTop + innerElem.offsetHeight ) <= ( outerElem.offsetTop + outerElem.offsetHeight )
+  )
+}
+
 const DomFn = {
   getConfigFromAttr,
   getTargetByAriaControls,
@@ -82,6 +93,7 @@ const DomFn = {
   addClassNames,
   removeClassNames,
   triggerEvent,
+  isPositionedInside,
 }
 
 export default DomFn
