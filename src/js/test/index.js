@@ -1,6 +1,12 @@
 import $ from "jquery"
 import { sayHello } from './say-hello.js'
 
+import ES5_UTILS from './test-01.js'
+
+console.log( 'TEST' )
+console.log( 'ES5_UTILS.classes.animatingIn: ' + ES5_UTILS.classes.animatingIn )
+ES5_UTILS.$functionElems.addClass( ES5_UTILS.classes.animatingIn )
+
 // TEST inner elem positioned inside outer elem
 // import DomData from './../dom/dom-data'
 // import MakeFnElems from './../dom/function-elements'

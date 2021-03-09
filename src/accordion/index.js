@@ -25,6 +25,7 @@ class Accordion {
   }
   _open( trigger ) {
     trigger.setAttribute( 'aria-expanded', 'true' )
+    // DomFn.ariaExpanded( trigger, true )
     trigger.classList.add( this.TRIGGER_OPENED_CLASS )
     const target = DomFn.getTargetByAriaControls( trigger, trigger.closest( '[data-acc-itm]' ) )
     const targetInner = target.querySelector( '[acc-cnt-inr]' )

@@ -35,6 +35,7 @@
 // files
 
 // import './test/index.js';
+import './test/index.js';
 import './../test/index.js';
 
 // import './utilities/utils.js';

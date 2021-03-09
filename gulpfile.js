@@ -36,6 +36,24 @@ const paths = {
     },
 };
 
+// PUBLISH HOWTO: 
+// If you like to copy your files to another folder after build make 
+// `.env` file with content `PUBLISH_PATH=path_to_your_folder`, 
+// e.g. `PUBLISH_PATH=../../../../../Applications/MAMP/htdocs/`
+// Have a look at `publishConfig` which files to include / exclude
+// and how to name your created destination folder
+// 
+// NOTE: within `src` all (1..n) non-negative globs must be followed by (0..n) only negative globs
+const publishConfig = {
+    "src": [
+        "**/*",
+        "!**/node_modules",
+        "!**/node_modules/**", 
+    ],
+    "base": ".",
+    "folderName": "gulp-babel-test"
+};
+
 
 const cssFolderClean = ( cb ) => { 
 
@@ -132,24 +150,13 @@ exports.js = series(
 );
 
 
-
-// NOTE: within `src` all (1..n) non-negative globs must be followed by (0..n) only negative globs
-const publishConfig = {
-    "src": [
-        "**/*",
-        "!**/node_modules",
-        "!**/node_modules/**", 
-    ],
-    "base": ".",
-};
-
 // NOTE: take care at this path since you’re deleting files outside your project
-const publishFullPath = envConfig.PUBLISH_PATH + '/' + envConfig.PUBLISH_FOLDER_NAME;
+const publishFullPath = envConfig.PUBLISH_PATH + '/' + publishConfig.folderName;
 
 
 const publishFolderDelete = ( cb ) => {
 
-    if ( !! envConfig.PUBLISH_PATH && !! envConfig.PUBLISH_FOLDER_NAME ) {
+    if ( !! envConfig.PUBLISH_PATH && !! publishConfig.folderName ) {
         // console.log( 'delete: ' + publishFullPath );
         return gulp.src( publishFullPath, { read: false, allowEmpty: true } )
             .pipe( clean( { force: true } ) ) // NOTE: take care at this command since you’re deleting files outside your project
@@ -164,7 +171,7 @@ const publishFolderDelete = ( cb ) => {
 
 const publishFolderCreate = ( cb ) => {
 
-    if ( !! envConfig.PUBLISH_PATH && !! envConfig.PUBLISH_FOLDER_NAME ) {
+    if ( !! envConfig.PUBLISH_PATH && !! publishConfig.folderName ) {
         // console.log( 'create: ' + publishFullPath + ' (src: ' + publishConfig.src + ', base: ' + publishConfig.base + ')' );
         return gulp.src( publishConfig.src, { base: publishConfig.base } )
             .pipe( gulp.dest( publishFullPath ) )
