@@ -92,7 +92,7 @@ class BrowserAnalytics {
     }
 
     document.body.classList.add( 'browser-tested' )
-    console.log( 'browser-tested' )
+    // console.log( 'browser-tested' )
   }
 }
 

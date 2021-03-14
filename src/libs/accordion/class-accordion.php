@@ -29,7 +29,7 @@ class Accordion {
   public function print() {
     
     // list
-    $output = '<ul class="unstyled-list" data-acc';
+    $output = '<ul class="list-unstyled" data-acc';
     if ( isset ( $this->data[ 'config' ][ 'multi_open' ] ) ||  isset ( $this->data[ 'config' ][ 'trigger_opened_class' ] ) || isset ( $this->data[ 'config' ][ 'target_opened_class' ] ) ) {
       $output .= ' data-acc-conf="{ ';
       if ( isset ( $this->data[ 'config' ][ 'multi_open' ] ) ) {

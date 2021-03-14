@@ -1,7 +1,7 @@
 import $ from "jquery"
-import { sayHello } from './say-hello.js'
+// import { sayHello } from './say-hello.js'
 
-import ES5_UTILS from './test-01.js'
+import ES5_UTILS from './dep-utils.js'
 
 console.log( 'TEST' )
 console.log( 'ES5_UTILS.classes.animatingIn: ' + ES5_UTILS.classes.animatingIn )
@@ -26,9 +26,9 @@ ES5_UTILS.$functionElems.addClass( ES5_UTILS.classes.animatingIn )
 
 
 // importet function
-sayHello( {
-  name: 'MyName :)',
-} );
+// sayHello( {
+//   name: 'MyName :)',
+// } );
 
 
 // jquery test

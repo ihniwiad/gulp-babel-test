@@ -73,16 +73,6 @@ var Utils = {
     ],
 
     anchorOffsetTop: 0,
-
-    lang: null,
-
-    Alert: null,
-
-    MessageHandler: null,
-
-    WaitScreen: null,
-
-    CookieHandler: null
     
 };
 
