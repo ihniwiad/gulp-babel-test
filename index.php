@@ -2,7 +2,7 @@
 
 namespace Bsx;
 
-require_once( 'src/accordion/class-accordion.php' );
+require_once( 'src/libs/accordion/class-accordion.php' );
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ require_once( 'src/accordion/class-accordion.php' );
     <div class="container">
       <?php
         // list of example accordions
-        include 'src/accordion/example.php';
+        include 'src/libs/accordion/example.php';
       ?>
     </div>
 

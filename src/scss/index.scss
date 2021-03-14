@@ -1,9 +1,9 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-@import "../test/index";
+@import "../libs/test/index";
 
-@import "../accordion/style";
-@import "../appear-effects/style";
+@import "../libs/accordion/style";
+@import "../libs/appear-effects/style";
 
 @import "basic/list";
 @import "basic/margin";

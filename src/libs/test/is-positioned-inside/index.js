@@ -1,8 +1,8 @@
 
 // inner elem positioned inside outer elem
-import DomData from './../../js/dom/dom-data'
-import MakeFnElems from './../../js/dom/function-elements'
-import DomFn from './../../js/utilities/dom-functions'
+import DomData from './../../../js/dom/dom-data'
+import MakeFnElems from './../../../js/dom/function-elements'
+import DomFn from './../../../js/utilities/dom-functions'
 
 const KEY = 'outer'
 

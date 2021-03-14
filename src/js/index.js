@@ -36,12 +36,12 @@
 
 // import './test/index.js';
 import './test/index.js';
-import './../test/index.js';
+import './../libs/test/index.js';
 
 // import './utilities/utils.js';
 import './browser-analytics/index.js';
-import './../accordion/index.js';
-import './../appear-effects/index.js';
+import './../libs/accordion/index.js';
+import './../libs/appear-effects/index.js';
 
 
 
